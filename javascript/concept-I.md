@@ -97,7 +97,13 @@ Arrow Functions:
     obj.c() // print 10, Object {....}
   ```
 
-  Hoisting
+  Hoisting: the process of putting all variables and function declarations into memory during the compile phase.
+    1. Functions are fully hoisted
+    2. Var variables are hoisted and initialized undefined until they are set to a value in line.
+    3. Const and Let are hoisted but not initialized a value
+    -> when calling const let before they are declared -> throw a reference error
+  
+
 
 
 
