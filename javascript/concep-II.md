@@ -17,9 +17,3 @@ IIFE: Immediately invoked function expression
   ```
 
 
-dynamic scope vs lexical scope
-call(), apply(), bind()
-
-bind() and currying
-
-higher order function
