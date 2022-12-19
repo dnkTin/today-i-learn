@@ -1,5 +1,4 @@
 lexical environment
-hoisting
 scope
 function scope
 block scope

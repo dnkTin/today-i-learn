@@ -47,8 +47,57 @@ the event loop and callback queue needed to run asynchronous operations.
 Job queue come with promise, javascript engine will check job queue before the callback queue.
 
 
+```javascript
+  1. Callback queue ~ task queue
+  setTimeout(() => {
+    console.log('this is come from calback queue')
+  })
+  2. Job queue ~ microtask queue
+  Promise.resolve('hi').then((data) => console.log(data, 'this is come from job queue))
+```
+3 promise: promise all, promise race, promise
 
+Threaded - worker - Multi threaded
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+https://www.freecodecamp.org/news/scaling-node-js-applications-8492bd8afadc/
+https://www.internalpointers.com/post/gentle-introduction-multithreading
 
+execution context:
+  1. Global execution context
+    Creation Phase
+      Step 1: global object created
+      Step 2: initialize this keyword to global
+    Execution Phase
+      Step 3: Variable Environment created - memory space for var variables and function
+      Step 4: Initializes all variables to undefined (also know as HOISTING) and places them
+              with any functinos into memory
+  2. Function Execution Context
+    Creation Phase
+      Step 1: argument object created with any argument
+      Step 2: initializes this keyword to point called or to the global object if not specified
+    Execution Context
+      Step 3: Variable environment created - memory space for variable and functions created
+      Step 4: Initializes all variable to undefined and places them into memory with any new functions
+
+Arrow Functions:
+  some people think of arrow function as just being a syntactic sugar for a regular function
+  but arrow function work a bit differently than a regular function
+  They are a compact alternative to a regular function, but without its own binding this, arguments, super, or new.target keywords.
+  Arrow function can not be used as constructors and are not the best option for methods
+  ```javascript
+    var obj = {
+      // does not create a new scope
+      i: 10,
+      b: () => console.log(this.i, this),
+      c: function() {
+        console.log(this.i, this);
+      },
+    };
+    obj.b() // print undefined, window
+    obj.c() // print 10, Object {....}
+  ```
+
+  Hoisting
 
 
 
