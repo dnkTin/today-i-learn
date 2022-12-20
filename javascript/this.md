@@ -118,4 +118,14 @@ undefined is not declared yet
 Primitive are pass by value (number, string, boolean)
 Non Primitive are passed by refernce (object)
 
-higher order function
+
+Clone Object:
+  JSON PARSE
+  Object.assign
+  Write your own function
+  Spread Operator
+  Clone in lodash
+
+
+
+higher order function  is a function that either takes a function as an argument or returns another function. There are 3 kinds of functions in JavaScript.
