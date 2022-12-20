@@ -26,3 +26,28 @@ Key idea:
   Be composable, one in put and one output
   Be pure if possible
   Return something
+
+  **pipe** and **compose**
+in javscript, it is best idea to make function small and reuseable.
+
+Function composition is the idea that you lay out your functions like a factory assemble line.
+pipe() and compose() don't actually exist in Javascript yet.
+
+compose function: read the function from right to left
+pipe function: read the function from left to right
+
+```javascript
+  // create your own COMPOSE function
+  const compose = (fn1, fn2) => data => fn1(fn2(data));
+  // create your own PIPE function
+  const pipe = (fn1, fn2) => data => fn2(fn1(data));
+
+  const multiplyBy3 = num => num * 3
+  const makePositive = num => Math.abs(num)
+
+  // use composse
+  const composeFn = compose(multiplyBy3,l makePositive)(40);
+```
+
+COMPOSITION VS INHERITANCE KHONG HIEU
+Composition is what we just did with FP, creating small reusable functions to make code modular. Inheritance is what we did with OOP, creating a class and extending it to subclasses that inherit the properties. In OOP we create few operations on common data that is stateful with side effects. In FP we create many operations on fixed data with pure functions that don't mutate state. There is a big debate over which one is better and most people believe that composition is better.
