@@ -1,0 +1,1 @@
+You should never, when facing some unbelievable tragedy, let one tragedy increase to two or three through your failure of will
