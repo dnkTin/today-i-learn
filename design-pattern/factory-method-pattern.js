@@ -100,7 +100,7 @@ class ToastFactory {
 }
 
 class App {
-  toast: Toase;
+  toast: Toast;
   factory = new ToastFactory();
   render() {
     this.toast = this.factory.creatToast(isMobile() ? 'mobile': 'desktop');
