@@ -3,6 +3,19 @@
 
 What is Closure?
 a closure gives you access to its outer functions scope from the inner scope. 
+```javascript
+  const start = () => {
+    const name = 'Tin'
+    const displayName = () => {
+      alert(name)
+    }
+    displayName()
+  }
+  start()
+  // -> there is a closure scrope come into play between the inner displayName function and the start function
+
+  // displayName can access the the outer 'name' variable
+```
 
 Prototypal Inheritance - Khong Hieu
 
