@@ -60,6 +60,43 @@ Array.prototype.myFilter = function (cb) {
 }
 ```
 
+
+```javascript
+  // Immplement Debounce method
+  const onScroll = (e) => {
+    // do something
+    fetchUser
+  }
+  document.addEventListener('onScroll', debounce(fetchUser, 300))
+  const fetchUser = () => {
+    // fetchUser
+  }
+  const debounce = (cb, timeout) => {
+    let timer
+    return function() {
+      let context = this
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        cb.apply(context, arguments)
+      }, timeout)
+    }
+
+  }
+
+
+  // re implemtn
+
+  const debounce = (callback, timeout) => {
+    let timer
+    return () => {
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        callback(arguments)
+      }, timeout)
+    }
+  }
+```
+
 greatest achivement:
 develop event - work for thousand of people - work with across the team
 cause we have across component
@@ -89,3 +126,78 @@ I designed the architecture for a small software system
 SRS - have you written a software requirement specification (SRS) in the past?
 
 candid and transparent
+
+
+Performance:
+Small Javascript size improves CPU costs, memory usage, and download time.
+
+Don’t use large third-party libraries. For example, consider DateJs over MomentJs. Eslint allows us to add rules that prevent certain imports.
+Use partial loading on a page.
+Lazy load modules.
+Increase landing time by only loading the content above the fold.
+Analyze web performance with Google Web Vitals: 1. Largest Contentful Paint 2. First Input Delay 3. Cumulative Layout Shift
+Frameworks-specific techniques: onPush in Angular.
+Avoid long tasks (> 15ms) so the main thread isn’t blocked.
+Avoid large bundles (> 50KB). Split it up so it takes advantage of Chrome’s parallelization.
+Avoid large in-line scripts. Chrome can’t optimize it.
+Separate vendor bundles from main bundles. It allows the browser to cache more codes.
+If the landing page were a static page, there would be no need to load a large bundle with vendors. We can pre-fetch large bundles for other complex pages
+
+
+Think of about 20 interview questions you'll get, along with the lines of the items below. Have at least one answer for each. Have a story, not just data, about something you accomplished.
+
+Why do you want this job?
+
+What's a tough problem you've solved?
+
+Biggest challenges faced?
+
+Best/worst designs seen?
+
+Ideas for improving an existing product
+
+How do you work best, as an individual and as part of a team?
+
+Which of your skills or experiences would be assets in the role and why?
+
+What did you most enjoy at [job x / project y]?
+
+What was the biggest challenge you faced at [job x / project y]?
+
+What was the hardest bug you faced at [job x / project y]?
+
+What did you learn at [job x / project y]?
+
+What would you have done better at [job x / project y]?
+
+If you find it hard to come up with good answers of these types of interview questions, here are some ideas:
+
+General Interview Questions and their Answers
+Have questions for the interviewer
+Some of mine (I already may know the answers, but want their opinion or team perspective):
+
+How large is your team?
+What does your dev cycle look like? Do you do waterfall/sprints/agile?
+Are rushes to deadlines common? Or is there flexibility?
+How are decisions made in your team?
+How many meetings do you have per week?
+Do you feel your work environment helps you concentrate?
+What are you working on?
+What do you like about it?
+What is the work life like?
+How is the work/life balance?
+
+
+Explain the differences between a hash table and an array?
+
+Explain the advantages of object oriented programming?
+
+Talk about using js prototypes.
+
+Could you tell me about a project you are very proud of? fpt
+
+
+What are your career goals over the next five years? How does Netflix fit into your overall vision?
+
+You observe that a colleague always arrives late to a weekly meeting. What would you do?
+
